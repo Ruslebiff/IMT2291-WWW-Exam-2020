@@ -1,4 +1,4 @@
-# imt2291 eksamen v2019
+# imt2291 eksamen v2020
 * Lag en FORK av dette repositoriet og gi meg leserettigheter (aland.a.mendoza@ntnu.no). Det som er i repositoriet på slutten av eksamen teller som din besvarelse.
 * Legg inn studentnummeret ditt øverst i readme.md fila.
 * I oppgave 1-3 kan du bruke oppsettet i mappen oppgave1-3, eller du kan bruke standard PHP / MYSQL server (f.eks. XAMPP) og opprette database med oppgave1-3/dbInit/myDB.sql. Kjør composer install for å installere Twig.
