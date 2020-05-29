@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <p><a href="index.php">Tilbake til index</a>.</p>
-  <title>Legg til en bruker</title>
+  <title>Oppgave 1 - Legg til en bruker</title>
   <style>
     label {
       display: inline-block;
@@ -52,7 +52,7 @@
     })
 
     document.querySelector("form").addEventListener('submit', e=>{
-      if (e.target.pwd.value!=e.target.pwd1.value) {  // Checks for equal passwords before sending
+      if (e.target.pwd.value!=e.target.pwd1.value) {  // check if passwords match
         e.preventDefault();
       }
     })
