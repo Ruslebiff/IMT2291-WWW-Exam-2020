@@ -42,7 +42,7 @@ if ($_POST['oldpwd']=='') { // No old password, update only first and last name
         if ($stmt->rowCount()==1) {
           echo json_encode(array('status'=>'success'));
         } else {
-          echo json_encode(array('status'=>'fail', 'msg'=>'Unable to update user1'));
+          echo json_encode(array('status'=>'fail', 'msg'=>'No changes done to user'));
         }
       } else {
         echo json_encode(array('status'=>'fail', 'msg'=>'Incorrect PWD for user'));
