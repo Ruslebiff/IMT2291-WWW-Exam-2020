@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Oppgave 2</title>
+  <style>
+    body {
+      width: 98%;
+      height: 98vh;
+    }
+
+    body>section {
+      width: 1024px;
+      margin: 0 auto;
+      height: 98%;
+    }
+
+    body>section>div {
+      display: inline-block;
+      width: 45%;
+      padding: 5px;
+      height: 100%;
+      overflow-y: auto;
+    }
+
+    .users ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .users ul span:nth-child(odd) {
+      width: 14em;
+      display: inline-block;
+      overflow: hidden;
+    }
+
+    label {
+      display: inline-block;
+      width: 7em;
+    }
+
+    .response {
+      display: none;
+    }
+
+    input[type="submit"] {
+      margin: 5px 0px;
+    }
+
+    progress {
+      display: none;
+      width: 50%;
+    }
+
+    .users img {
+      border-radius: 50px;
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+  <p><a href="index.php">Tilbake til index</a>.</p>
+  <section>
+    <div class="users">
+      <h2>Oversikt over brukere</h2>
+      <ul></ul>
+    </div>
+    <div class="user">
+      <h2>Redigere bruker</h2>
+      <form>
+        <label for="uname">Brukernavn</label><input type="email" id="uname" name="uname" required pattern=".{6,}" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Gyldig e-post adresse"><br>
+        <label for="firstName">Fornavn</label><input type="text" id="firstName" name="firstName" required pattern=".{1,}" title="Kan ikke være tomt"><br>
+        <label for="lastName">Etternavn</label><input type="text" id="lastName" name="lastName" required pattern=".{1,}" title="Kan ikke være tomt"><br>
+        <label for="oldpwd">Eksisterende passord</label><input type="password" id="oldpwd" name="oldpwd" required pattern=".{8,}" title="Minimum 8 tegn"><br>
+        <label for="pwd">Passord</label><input type="password" id="pwd" name="pwd" required pattern=".{8,}" title="Minimum 8 tegn"><br>
+        <label for="pwd1">Bekreft passord</label><input type="password" id="pwd1" name="pwd1" required pattern=".{8,}" title="Minimum 8 tegn"><br>
+        <input type="submit" value="Oppdater informasjon">
+        <div class="response"></div>
+      </form>
+    </div>
+  </section>
+  <script src="js/usersList.js" charset="utf-8"></script>
+  <script src="js/editUser.js" charset="utf-8"></script>
+</body>
+</html>
