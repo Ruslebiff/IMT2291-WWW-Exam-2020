@@ -44,6 +44,7 @@ class UsersList extends LitElement {
 
   render() {
     return html`
+    <p><a href="index.php">Tilbake til index</a>.</p>
       <div class="row">
         <div class="column">
           <h2>Brukere</h2>
