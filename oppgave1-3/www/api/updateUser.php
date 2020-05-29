@@ -27,7 +27,7 @@ if ($_POST['oldpwd']=='') { // No old password, update only first and last name
   if ($stmt->rowCount()==1) {
     echo json_encode(array('status'=>'success'));
   } else {
-    echo json_encode(array('status'=>'fail', 'msg'=>'Unable to update user'));
+    echo json_encode(array('status'=>'fail', 'msg'=>'Unable to update user. Existing password might be needed'));
   }
 } else { // Password set, update details needing pwd
   if ($_POST['pwd']=='') { // No new pwd, only update username, first and last name
