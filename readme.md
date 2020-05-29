@@ -1,5 +1,6 @@
 # Studentnummer: 505968
 Kan oppstå noen problemer i Firefox. Fungerer i Chrome.
+Lenker til visning av oppgavebesvarelser er lagt til i en meny i index.php (http://localhost/ evt http://127.0.0.1/) for enkel navigasjon.
 
 # imt2291 eksamen v2020
 * Lag en FORK av dette repositoriet og gi meg leserettigheter (aland.a.mendoza@ntnu.no). Det som er i repositoriet på slutten av eksamen teller som din besvarelse.
