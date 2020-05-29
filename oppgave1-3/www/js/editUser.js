@@ -36,10 +36,6 @@ document.querySelector('input[type="submit"]').addEventListener('click', e=>{
           response.innerHTML = "Error: " + data.msg;
           console.log(data.msg);
         }
-        
-        setTimeout(()=> {
-          response.style.display = 'none';
-        }, 3000);
       })
   }
 })

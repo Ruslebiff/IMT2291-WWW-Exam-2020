@@ -90,7 +90,7 @@ class EditUser extends LitElement {
         <label for="oldpwd">Eksisterende passord</label><input type="password" id="oldpwd" name="oldpwd" required pattern=".{8,}" title="Minimum 8 tegn"><br>
         <label for="pwd">Passord</label><input type="password" id="pwd" name="pwd" pattern=".{8,}" title="Minimum 8 tegn"><br>
         <label for="pwd1">Bekreft passord</label><input type="password" id="pwd1" name="pwd1" pattern=".{8,}" title="Minimum 8 tegn"><br>
-        <input type="submit" @click="${this._submit}" value="Oppdater informasjon">
+        <input type="submit" @click="${this._submit}" value="Oppdater bruker">
         <div class="response" id="response"></div>
       </form>
     `;
@@ -114,7 +114,7 @@ class EditUser extends LitElement {
           const response = this.shadowRoot.getElementById('response');
           response.style.display = 'block';
           if (data.status=='success') {
-            // location.reload(); // refresh user list after changes
+            // location.reload(); // refresh user list after changes. Will unfortunately remove the response message.
             response.style.color = "#0B0";
             response.innerHTML = "Informasjon om brukeren er oppdatert";
             
@@ -123,9 +123,6 @@ class EditUser extends LitElement {
             response.innerHTML = "Error: " + data.msg;
             console.log(data.msg);
           }
-          setTimeout(()=> {
-            response.style.display = 'none';
-          }, 3000);
         })
    }
 }
