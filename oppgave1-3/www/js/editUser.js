@@ -12,6 +12,7 @@ function editUser(uid) {
 
 document.querySelector('input[type="submit"]').addEventListener('click', e=>{
   e.preventDefault();
+  
   if (window.uid>-1) {
     const data = new FormData(e.target.form);
     data.append('uid', window.uid);
