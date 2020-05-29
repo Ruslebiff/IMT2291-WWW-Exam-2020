@@ -4,12 +4,15 @@ function editUser(uid) {
   .then(res=>res.json())
   .then(user=>{
     window.uid = user.uid;
+
+    // Add existing values to form:
     document.getElementById('uname').value = user.uname;
     document.getElementById('firstName').value = user.firstName;
     document.getElementById('lastName').value = user.lastName;
   })
 }
 
+// Update user in DB with form data
 document.querySelector('input[type="submit"]').addEventListener('click', e=>{
   e.preventDefault();
   
@@ -20,21 +23,23 @@ document.querySelector('input[type="submit"]').addEventListener('click', e=>{
       method: 'POST',
       body: data
     }).then(res=>res.json())
-    .then(data=>{
-      const response = document.querySelector('.response');
-      response.style.display = 'block';
-      if (data.status=='success') {
-        response.style.color = "#0B0";
-        response.innerHTML = "Informasjon om brukeren er oppdatert";
-        fetchUsers();
-      } else {
-        response.style.color = "#F00";
-        response.innerHTML = "Error: " + data.msg;
-        console.log(data.msg);
-      }
-      setTimeout(()=> {
-        response.style.display = 'none';
-      }, 3000);
-    })
+      .then(data=>{
+        const response = document.querySelector('.response');
+        response.style.display = 'block';
+        
+        if (data.status=='success') {
+          response.style.color = "#0B0";
+          response.innerHTML = "Informasjon om brukeren er oppdatert";
+          fetchUsers();
+        } else {
+          response.style.color = "#F00";
+          response.innerHTML = "Error: " + data.msg;
+          console.log(data.msg);
+        }
+        
+        setTimeout(()=> {
+          response.style.display = 'none';
+        }, 3000);
+      })
   }
 })
