@@ -103,23 +103,21 @@ class EditUser extends LitElement {
     */
    _submit(e) {
     e.preventDefault();
-      
-    console.log(e.target.parentElement);
 
     const data = new FormData(e.target.form);
     data.append('uid', this.user.uid);
-    console.log('Data ', data);
     fetch('api/updateUser.php', {
           method: 'POST',
           body: data
         }).then(res=>res.json())
         .then(data=>{
-          console.log(data);
           const response = this.shadowRoot.getElementById('response');
           response.style.display = 'block';
           if (data.status=='success') {
+            // location.reload(); // refresh user list after changes
             response.style.color = "#0B0";
             response.innerHTML = "Informasjon om brukeren er oppdatert";
+            
           } else {
             response.style.color = "#F00";
             response.innerHTML = "Error: " + data.msg;
